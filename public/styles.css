@@ -94,7 +94,7 @@ body, html {
   border-radius: 10px;
   border: 1px solid #aaa;
   background-color: #2a3d47; /* Same background as messages for consistency */
-  color: #fff;
+  color: #fff; /* White text color */
   font-size: 16px;
   margin-bottom: 10px;
   box-sizing: border-box;
@@ -108,4 +108,10 @@ body, html {
   outline: none;
   border-color: #4CAF50; /* Green border when focused */
 }
+
+/* Add visibility of typed text in input */
+.my-input-text:focus, .my-input-text {
+  color: #fff; /* Make sure the text color is white in both normal and focused state */
+}
+
 
