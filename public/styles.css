@@ -28,7 +28,7 @@ body, html {
   position: relative;
   margin-bottom: 15px;
   padding: 10px;
-  background-color: #2a3d47; /* Darker background for each message */
+  background-color: #2a3d47;
   border-radius: 10px;
   max-width: 80%;
   word-wrap: break-word;
@@ -37,24 +37,24 @@ body, html {
 }
 
 .message.user-message {
-  align-self: flex-end; /* Align the user's message to the right */
-  background-color: #4CAF50; /* Light green for user messages */
+  align-self: flex-end; 
+  background-color: #4CAF50;
 }
 
 .message.bot-message {
-  align-self: flex-start; /* Align the bot's message to the left */
-  background-color: #2a3d47; /* Darker background for bot's message */
+  align-self: flex-start; 
+  background-color: #2a3d47; 
 }
 
 .message .user {
   font-weight: bold;
-  text-align: right; /* Align user name to the left */
+  text-align: right;
   font-size: 14px;
-  margin-bottom: 5px; /* Small gap before the message */
+  margin-bottom: 5px; 
 }
 
 .message .text {
-  font-size: 16px; /* Larger font for message text */
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -66,19 +66,19 @@ body, html {
   left: -30px;
   display: none;
   background-color: transparent;
-  color: #e74c3c; /* Red color for delete icon */
+  color: #e74c3c;
   font-size: 16px;
   border: none;
   cursor: pointer;
 }
 
 .message:hover .remove {
-  display: block; /* Show delete button when hovering over message */
+  display: block;
 }
 
 .send-message {
   padding: 10px 20px;
-  background-color: #4CAF50; /* Green background for send button */
+  background-color: #4CAF50; 
   border: none;
   border-radius: 5px;
   color: #000;
@@ -88,15 +88,15 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 15px; /* Add space between the input and the send button */
+  margin-top: 15px;
 }
 
 .send-message:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049; 
 }
 
 .send-message:disabled {
-  background-color: #bdbdbd; /* Disabled button color */
+  background-color: #bdbdbd; 
   cursor: not-allowed;
 }
 
@@ -105,24 +105,24 @@ body, html {
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #aaa;
-  background-color: #2a3d47; /* Same background as messages for consistency */
-  color: #000; /* White text color */
+  background-color: #2a3d47;
+  color: #000; 
   font-size: 16px;
   margin-bottom: 10px;
   box-sizing: border-box;
-  margin-top: 10px; /* Ensure space from the last message */
+  margin-top: 10px;
 }
 
 .my-input-text::placeholder {
-  color: #ccc; /* Lighter placeholder text */
+  color: #ccc; 
 }
 
 .my-input-text:focus {
   outline: none;
-  border-color: #4CAF50; /* Green border when focused */
+  border-color: #4CAF50;
 }
 
-/* Add visibility of typed text in input */
+
 .my-input-text:focus, .my-input-text {
-  color: #000; /* Make sure the text color is white in both normal and focused state */
+  color: #000;
 }
