@@ -111,7 +111,7 @@ function App() {
           placeholder={`Hello ${name}! Type a message...`}
           autoComplete="off"
         />
-        <button type="submit" className="send-message two columns">
+        <button type="submit" class="btn">
           Send
         </button>
       </form>
