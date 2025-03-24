@@ -278,7 +278,7 @@ input[type="button"] {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
-  color: #555;
+  color: #ccc;
   text-align: center;
   font-size: 11px;
   font-weight: 600;
@@ -303,7 +303,7 @@ button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
-  color: #333;
+  color: #ccc;
   border-color: #FF8D33;
   outline: 0;
 }
