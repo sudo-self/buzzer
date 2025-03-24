@@ -65,16 +65,6 @@ body.dark-mode .my-input-text::placeholder {
   color: #aaa;
 }
 
-.send-message {
-  padding: 10px;
-  border: 1px solid #FB8A03;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  background: #555;
-  color: white;
-}
-
 .send-message:hover {
   background-color: #555;
 }
