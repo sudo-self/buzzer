@@ -126,6 +126,25 @@
       z-index: 10;
     }
 
+    /* Share button */
+    .share-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #4caf50;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 100;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .share-button:hover {
+      background-color: #45a049;
+    }
+
     /* Media Queries for Responsiveness */
     @media (max-width: 768px) {
       .row {
@@ -151,6 +170,11 @@
         width: 100%;
         padding: 12px;
       }
+
+      .share-button {
+        bottom: 15px;
+        right: 15px;
+      }
     }
 
   </style>
@@ -164,12 +188,14 @@
   <div class="container">
     <div class="row">
       <div class="one-third">
-        <h4><b>Buzzer!</b></h4>
-        <p><img src="https://img.shields.io/badge/JesseJesse.-workers.dev-orange" alt="Badge Preview"></p>
-      </div>
+        <h4><b>Buzzer!</b>&nbsp;built on</h4>
+  <p> <img src="https://img.shields.io/badge/Cloudflare-Workers-orange" alt="Badge Preview"></p>
       <div class="two-thirds" id="root"></div>
     </div>
   </div>
+
+  <!-- Native Share Button -->
+  <button class="share-button" onclick="sharePage()"><img src="https://img.shields.io/badge/bz-zzzrrrr-orange" alt="Badge Preview"></button>
 
   <script>
     // Dark Mode Toggle Functionality
@@ -197,7 +223,7 @@
 
     document.addEventListener("DOMContentLoaded", applyDarkModeSetting);
 
-    // Share functionality
+    // Native share functionality
     function sharePage() {
       if (navigator.share) {
         navigator.share({
@@ -211,4 +237,5 @@
   </script>
 </body>
 </html>
+
 
