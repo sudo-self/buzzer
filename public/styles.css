@@ -126,3 +126,34 @@ body, html {
 .my-input-text:focus, .my-input-text {
   color: #000;
 }
+
+
+.share-button {
+  background-color: #007bff; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.share-button i {
+  font-size: 20px;
+}
+
+.share-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.share-button:active {
+  background-color: #00408a;
+  transform: scale(0.95);
+}
+
