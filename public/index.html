@@ -1,39 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="utf-8" />
   <title>Bzzzzzzzz!</title>
   <meta name="description" content="" />
   <meta name="author" content="" />
-
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/skeleton.css" />
   <link rel="stylesheet" href="styles.css" />
-
-
   <link rel="icon" type="image/ico" href="favicon.ico" />
   <script src="/dist/index.js" type="module" nonce="NTg5NTQ2MTMsMjg1MDc4NjQxMw=="></script>
-
   <style>
- 
     body {
       background-color: #fff;
       color: #000;
       transition: background 0.3s, color 0.3s;
     }
-
-
     body.dark-mode {
       background-color: #121212;
       color: #ffffff;
     }
-
-   
     .dark-mode-toggle {
       position: fixed;
       top: 10px;
@@ -46,19 +33,15 @@
       cursor: pointer;
       font-size: 14px;
     }
-
     .dark-mode-toggle:hover {
       background: transparent;
     }
   </style>
 </head>
 <body>
-
   <button class="dark-mode-toggle" onclick="toggleDarkMode()">
     <img src="https://img.shields.io/badge/Dark-Light-orange" alt="Badge Preview">
   </button>
-
- 
   <div class="container" style="width: 95%; height: 100%">
     <div class="row" style="height: 100%">
       <div class="one-third column" style="margin-top: 25%">
@@ -71,7 +54,6 @@
       <div class="two-thirds column" id="root"></div>
     </div>
   </div>
-
   <script>
     function sharePage() {
       if (navigator.share) {
@@ -90,7 +72,6 @@
       localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
     }
 
- 
     window.onload = function () {
       if (localStorage.getItem('darkMode') === 'enabled') {
         document.body.classList.add('dark-mode');
@@ -99,4 +80,5 @@
   </script>
 </body>
 </html>
+
 
