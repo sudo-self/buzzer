@@ -1,5 +1,4 @@
-body,
-html {
+body, html {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -18,7 +17,6 @@ html {
   justify-content: flex-end;
   overflow-y: auto;
   height: 100%;
-  /* padding: 10px; */
 }
 
 .message {
@@ -35,17 +33,66 @@ html {
   width: 22px;
   height: 20px;
   left: -60px;
-  /* display: "block", */
   display: none;
   padding: 0;
   line-height: 18px;
-  border: "none";
 }
 
 .send-message {
-  padding: 0;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.send-message:hover {
+  background-color: #0056b3;
+}
+
+/* Input Styling */
+.my-input-text {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
 .my-input-text::placeholder {
-  color: #ccc;
+  color: #666;
 }
+
+body.dark-mode .my-input-text {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+body.dark-mode .my-input-text::placeholder {
+  color: #aaa;
+}
+
+/* Button Fix for Light Mode */
+body:not(.dark-mode) .send-message {
+  background-color: #007bff;
+  color: white;
+}
+
+body:not(.dark-mode) .send-message:hover {
+  background-color: #0056b3;
+}
+
+body.dark-mode .send-message {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark-mode .send-message:hover {
+  background-color: #666;
+}
+
