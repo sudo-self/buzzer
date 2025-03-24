@@ -4,12 +4,12 @@ body, html {
   padding: 0;
   display: flex;
   flex-direction: column;
-  background-color: #374851;
-  color: #fff;
+  background-color: #374851; /* Dark background for contrast */
+  color: #fff; /* White text for better readability */
 }
 
 .chat {
-  padding-top: 30px;
+  padding-top: 30px; /* Space at the top */
 }
 
 #root {
@@ -17,30 +17,33 @@ body, html {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  overflow-y: auto;
+  overflow-y: auto; /* Scrollable content */
   height: 100%;
-  /* padding: 10px; */
+  padding: 10px; /* Padding to prevent the text from touching edges */
+  box-sizing: border-box;
 }
 
 .message {
-  margin-bottom: 10px;
+  position: relative;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #2a3d47; /* Slightly lighter background for each message */
+  border-radius: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column; /* Ensure user name and message are stacked vertically */
 }
 
 .message .user {
   font-weight: bold;
-  text-align: right;
-}
-
-
-.message .user {
-  font-weight: bold;
-  text-align: right; 
+  text-align: right; /* Align user name to the right */
   font-size: 14px;
-  margin-bottom: 5px; 
+  margin-bottom: 5px; /* Small gap before the message */
 }
 
 .message .text {
-  font-size: 16px;
+  font-size: 16px; /* Larger font for message text */
   line-height: 1.5;
 }
 
@@ -52,19 +55,19 @@ body, html {
   left: -30px;
   display: none;
   background-color: transparent;
-  color: #e74c3c;
+  color: #e74c3c; /* Red color for delete icon */
   font-size: 16px;
   border: none;
   cursor: pointer;
 }
 
 .message:hover .remove {
-  display: block;
+  display: block; /* Show delete button when hovering over message */
 }
 
 .send-message {
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #4CAF50; /* Green background for send button */
   border: none;
   border-radius: 5px;
   color: #fff;
@@ -105,3 +108,4 @@ body, html {
   outline: none;
   border-color: #4CAF50; /* Green border when focused */
 }
+
