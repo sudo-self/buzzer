@@ -79,31 +79,35 @@
 
     /* Container and grid layout */
     .container {
-      width: 95%;
+      width: 100%;
+      max-width: 1200px; /* Added a max-width for better control on large screens */
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 20px;
     }
 
     .row {
       display: flex;
       width: 100%;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
 
     .one-third, .two-thirds {
       padding: 20px;
+      box-sizing: border-box;
     }
 
     .one-third {
-      flex: 0 0 30%;
+      flex: 1;
       text-align: center;
-      margin-top: 25%;
+      margin-top: 20px;
     }
 
     .two-thirds {
-      flex: 0 0 65%;
+      flex: 2;
     }
 
     /* Responsive design for smaller screens */
@@ -116,10 +120,16 @@
       .one-third, .two-thirds {
         width: 100%;
         padding: 10px;
+        box-sizing: border-box;
       }
 
       .one-third {
-        margin-top: 10%;
+        margin-top: 10px;
+      }
+
+      .dark-mode-toggle {
+        top: 15px;
+        right: 15px;
       }
     }
   </style>
