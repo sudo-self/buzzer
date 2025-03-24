@@ -19,7 +19,6 @@
       display: flex;
       flex-direction: column;
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
     }
 
     .container {
@@ -28,44 +27,26 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
     }
 
-    /* Row styling for left sidebar and chat area */
     .row {
       display: flex;
-      flex: 1;
-      flex-direction: row;
-      gap: 15px;
+      flex-direction: column;
+      flex-grow: 1;
+      overflow-y: auto; /* Make the chat area scrollable */
+      padding-bottom: 60px; /* To avoid overlap with input area */
     }
 
-    .one-third {
-      flex: 0 0 30%;
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .two-thirds {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-start;
-      background-color: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      overflow-y: auto;
+    /* Center the heading */
+    .header {
+      text-align: center;
+      margin-top: 20%;
+      font-size: 24px;
+      font-weight: bold;
     }
 
     .message {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .message .user {
@@ -73,14 +54,18 @@
       text-align: right;
     }
 
-    .message .content {
-      background-color: #e7e7e7;
+    /* Ensure chat box works well with scrolling */
+    #root {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow-y: auto;
+      width: 100%;
       padding: 10px;
-      border-radius: 5px;
-      word-wrap: break-word;
-      max-width: 80%;
     }
 
+    /* Input field styling */
     .my-input-text {
       padding: 10px;
       border: 1px solid #ccc;
@@ -93,19 +78,22 @@
       color: #ccc;
     }
 
-    .send-message button {
+    /* Button styles */
+    .send-message {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-top: 10px;
+    }
+
+    button {
       padding: 10px 15px;
-      background-color: #4CAF50;
-      color: white;
+      background: transparent;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       font-size: 16px;
-    }
-
-    .send-message button:hover {
-      background-color: #45a049;
+      transition: background-color 0.3s ease;
     }
 
     /* Dark Mode styles */
@@ -136,7 +124,7 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #4CAF50;
+      background: transparent;
       color: white;
       padding: 12px 20px;
       border-radius: 5px;
@@ -146,25 +134,11 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
-    .share-button:hover {
-      background: #45a049;
-    }
-
     /* Media Queries for Responsiveness */
     @media (max-width: 768px) {
       .row {
         flex-direction: column;
         align-items: center;
-      }
-
-      .one-third {
-        width: 100%;
-        margin-top: 10%;
-      }
-
-      .two-thirds {
-        width: 100%;
-        margin-top: 20px;
       }
 
       .message {
@@ -181,6 +155,7 @@
         right: 15px;
       }
     }
+
   </style>
 </head>
 <body>
@@ -190,19 +165,23 @@
   </button>
 
   <div class="container">
-    <div class="row">
-      <div class="one-third">
-        <h4><b>Buzzer!</b></h4>
-        <p><img src="https://img.shields.io/badge/Cloudflare-Workers-orange" alt="Badge Preview"></p>
-      </div>
-
-      <div class="two-thirds" id="root"></div>
+    <div class="header">
+      <h4><b>Buzzer!</b></h4>
+      <p> <img src="https://img.shields.io/badge/Cloudflare-Workers-orange" alt="Badge Preview"></p>
     </div>
 
-    <!-- Send Message Input -->
+    <div class="row" id="root">
+      <!-- Chat messages will go here -->
+    </div>
+
     <div class="send-message">
-      <input class="my-input-text" type="text" placeholder="Type your message...">
-      <button>Send</button>
+      <input
+        class="my-input-text"
+        type="text"
+        id="messageInput"
+        placeholder="Type a message..."
+      />
+      <button onclick="sendMessage()">Send</button>
     </div>
   </div>
 
@@ -246,9 +225,29 @@
         alert("Your browser does not support native sharing.");
       }
     }
+
+    // Send Message Function
+    function sendMessage() {
+      const input = document.getElementById('messageInput');
+      const message = input.value.trim();
+      
+      if (message) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message');
+        messageDiv.innerHTML = `<div class="user">You:</div><div>${message}</div>`;
+        document.getElementById('root').appendChild(messageDiv);
+        
+        // Clear the input field
+        input.value = '';
+        
+        // Scroll to the bottom
+        document.getElementById('root').scrollTop = document.getElementById('root').scrollHeight;
+      }
+    }
   </script>
 </body>
 </html>
+
 
 
 
