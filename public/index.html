@@ -53,14 +53,17 @@
   </style>
 </head>
 <body>
-  <!-- Dark Mode Button -->
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark</button>
+
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+    <img src="https://img.shields.io/badge/Dark-Light-orange" alt="Badge Preview">
+  </button>
 
  
   <div class="container" style="width: 95%; height: 100%">
     <div class="row" style="height: 100%">
       <div class="one-third column" style="margin-top: 25%">
-        <h4><b>Buzzer!</b> powered by</h4>
+        <h4><b>Buzzer!</b></h4>
+        <h6>powered by</h6>
         <p><img src="https://img.shields.io/badge/cloudflare-workers-orange" alt="Badge Preview"></p>
         <p>
           <button onclick="sharePage()" class="btn">Bzzzzz</button>
