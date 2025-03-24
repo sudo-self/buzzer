@@ -36,6 +36,26 @@
     .dark-mode-toggle:hover {
       background: transparent;
     }
+    input {
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      width: 100%;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark-mode input {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+    }
+    input::placeholder {
+      color: #888;
+    }
+    body.dark-mode input::placeholder {
+      color: #bbb;
+    }
   </style>
 </head>
 <body>
@@ -50,6 +70,7 @@
         <p>
           <button onclick="sharePage()" class="btn">bzzzz</button>
         </p>
+        <input type="text" placeholder="Type here..." />
       </div>
       <div class="two-thirds column" id="root"></div>
     </div>
@@ -80,5 +101,6 @@
   </script>
 </body>
 </html>
+
 
 
