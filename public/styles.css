@@ -5,7 +5,10 @@ html {
   padding: 0;
   display: flex;
   flex-direction: column;
+  background-color: #051637; 
+  color: white; 
 }
+
 
 .chat {
   padding-top: 40px;
