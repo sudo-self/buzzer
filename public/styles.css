@@ -23,6 +23,10 @@ body, html {
   margin-bottom: 10px;
 }
 
+.send-message {
+  padding: 1px;
+}
+
 .message .user {
   font-weight: bold;
   text-align: right;
