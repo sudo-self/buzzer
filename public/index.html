@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Bzzzzzzzz!</title>
+  <title>Chat!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/skeleton.css" />
@@ -11,19 +11,108 @@
   <script src="/dist/index.js" type="module"></script>
   <style>
     /* General body and layout styles */
-    body {
-      background-color: #fff;
-      color: #000;
+    body,
+    html {
+      height: 100%;
       margin: 0;
-      font-family: Arial, sans-serif;
       padding: 0;
-      transition: background 0.3s ease, color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
     }
 
-    /* Dark mode styling */
+    .container {
+      width: 95%;
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+    }
+
+    .one-third {
+      flex: 0 0 30%;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 20%;
+    }
+
+    .two-thirds {
+      flex: 0 0 65%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .message {
+      margin-bottom: 10px;
+    }
+
+    .message .user {
+      font-weight: bold;
+      text-align: right;
+    }
+
+    /* Ensure chat box works well with scrolling */
+    #root {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow-y: auto;
+      width: 100%;
+      padding: 10px;
+    }
+
+    /* Input field styling */
+    .my-input-text {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .my-input-text::placeholder {
+      color: #ccc;
+    }
+
+    /* Button styles */
+    .send-message {
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background: #fb8a03;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff5722;
+    }
+
+    /* Dark Mode styles */
     body.dark-mode {
       background-color: #121212;
       color: #ffffff;
+    }
+
+    body.dark-mode input {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
     }
 
     /* Dark mode toggle button */
@@ -37,101 +126,33 @@
       z-index: 10;
     }
 
-    /* Button styling */
-    button {
-      padding: 10px 15px;
-      background: transparent;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #FB8A03;
-    }
-
-    /* Input field styling */
-    input {
-      background-color: #fff;
-      color: #000;
-      border: 1px solid #ccc;
-      padding: 10px;
-      border-radius: 5px;
-      width: 100%;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    body.dark-mode input {
-      background-color: #333;
-      color: #fff;
-      border: 1px solid #555;
-    }
-
-    input::placeholder {
-      color: #888;
-    }
-
-    body.dark-mode input::placeholder {
-      color: #bbb;
-    }
-
-    /* Container and grid layout */
-    .container {
-      width: 100%;
-      max-width: 1200px; /* Added a max-width for better control on large screens */
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .row {
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .one-third, .two-thirds {
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .one-third {
-      flex: 1;
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .two-thirds {
-      flex: 2;
-    }
-
-    /* Responsive design for smaller screens */
+    /* Media Queries for Responsiveness */
     @media (max-width: 768px) {
       .row {
         flex-direction: column;
         align-items: center;
       }
 
-      .one-third, .two-thirds {
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-      }
-
       .one-third {
-        margin-top: 10px;
+        width: 100%;
+        margin-top: 10%;
       }
 
-      .dark-mode-toggle {
-        top: 15px;
-        right: 15px;
+      .two-thirds {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .message {
+        font-size: 14px;
+      }
+
+      .send-message button {
+        width: 100%;
+        padding: 12px;
       }
     }
+
   </style>
 </head>
 <body>
@@ -144,28 +165,13 @@
     <div class="row">
       <div class="one-third">
         <h4><b>Buzzer!</b></h4>
-        <p><img src="https://img.shields.io/badge/cloudflare-workers-orange" alt="Badge"></p>
-        <p>
-          <button onclick="sharePage()">bzzzz</button>
-        </p>
+        <p><img src="https://img.shields.io/badge/JesseJesse.-workers.dev-orange" alt="Badge Preview"></p>
       </div>
       <div class="two-thirds" id="root"></div>
     </div>
   </div>
 
   <script>
-    // Share functionality
-    function sharePage() {
-      if (navigator.share) {
-        navigator.share({
-          title: document.title,
-          url: window.location.href
-        }).catch(console.error);
-      } else {
-        alert("Your browser does not support native sharing.");
-      }
-    }
-
     // Dark Mode Toggle Functionality
     function toggleDarkMode() {
       document.body.classList.toggle("dark-mode");
@@ -190,6 +196,18 @@
     }
 
     document.addEventListener("DOMContentLoaded", applyDarkModeSetting);
+
+    // Share functionality
+    function sharePage() {
+      if (navigator.share) {
+        navigator.share({
+          title: document.title,
+          url: window.location.href
+        }).catch(console.error);
+      } else {
+        alert("Your browser does not support native sharing.");
+      }
+    }
   </script>
 </body>
 </html>
