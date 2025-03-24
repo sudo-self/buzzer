@@ -81,7 +81,7 @@ body, html {
   background-color: #4CAF50; /* Green background for send button */
   border: none;
   border-radius: 5px;
-  color: #fff;
+  color: #000;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -106,7 +106,7 @@ body, html {
   border-radius: 10px;
   border: 1px solid #aaa;
   background-color: #2a3d47; /* Same background as messages for consistency */
-  color: #fff; /* White text color */
+  color: #000; /* White text color */
   font-size: 16px;
   margin-bottom: 10px;
   box-sizing: border-box;
