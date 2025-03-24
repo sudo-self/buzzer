@@ -13,7 +13,7 @@ body, html {
 /* Chat Container */
 .chat {
   flex: 1;
-  padding: 30px 10px;
+  padding: 20px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -33,16 +33,16 @@ body, html {
   font-size: 16px;
 }
 
-/* User Message */
+/* User Message (Right Side) */
 .message.user-message {
   align-self: flex-end;
   background-color: #3DAE43;
   color: white;
-  text-align: right;
+  text-align: left;
   border-top-right-radius: 2px;
 }
 
-/* Bot Message */
+/* Bot Message (Left Side) */
 .message.bot-message {
   align-self: flex-start;
   background-color: #1F2D36;
@@ -51,7 +51,7 @@ body, html {
   border-top-left-radius: 2px;
 }
 
-/* User Name - Always Top Left */
+/* User Name (Top Left) */
 .message .user {
   font-weight: bold;
   font-size: 14px;
@@ -60,30 +60,11 @@ body, html {
   text-align: left;
 }
 
-/* Message Text - Aligned to Bottom */
+/* Message Text (Properly Positioned) */
 .message .text {
   text-align: left;
   font-size: 16px;
   line-height: 1.5;
-}
-
-/* Remove Button - Only on Hover */
-.message .remove {
-  position: absolute;
-  width: 22px;
-  height: 20px;
-  top: 5px;
-  left: -30px;
-  display: none;
-  background-color: transparent;
-  color: #e74c3c;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.message:hover .remove {
-  display: block;
 }
 
 /* Input Field */
@@ -172,3 +153,4 @@ body, html {
   background-color: #00408a;
   transform: scale(0.95);
 }
+
