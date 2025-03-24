@@ -9,17 +9,18 @@ body, html {
 }
 
 .chat {
-  padding-top: 30px; /* Space at the top */
+  flex: 1;
+  padding-top: 30px;
+  padding-bottom: 10px; /* Add space at the bottom for the input */
+  overflow-y: auto; /* Scrollable content */
 }
 
 #root {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  overflow-y: auto; /* Scrollable content */
-  height: 100%;
-  padding: 10px; /* Padding to prevent the text from touching edges */
+  overflow-y: auto; /* Allow scroll */
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -77,6 +78,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 15px; /* Add space between the input and the send button */
 }
 
 .send-message:hover {
@@ -98,6 +100,7 @@ body, html {
   font-size: 16px;
   margin-bottom: 10px;
   box-sizing: border-box;
+  margin-top: 10px; /* Ensure space from the last message */
 }
 
 .my-input-text::placeholder {
@@ -113,5 +116,6 @@ body, html {
 .my-input-text:focus, .my-input-text {
   color: #fff; /* Make sure the text color is white in both normal and focused state */
 }
+
 
 
