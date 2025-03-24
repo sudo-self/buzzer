@@ -33,9 +33,11 @@ body, html {
   width: 22px;
   height: 20px;
   left: -60px;
+  /* display: "block", */
   display: none;
   padding: 0;
   line-height: 18px;
+  border: "none";
 }
 
 /* Fix input text visibility */
@@ -63,7 +65,6 @@ body.dark-mode .my-input-text::placeholder {
   color: #aaa;
 }
 
-/* Fix button visibility in both modes */
 .send-message {
   padding: 10px;
   border: none;
