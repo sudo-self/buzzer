@@ -1,253 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Chat!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/skeleton.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/ico" href="favicon.ico" />
-  <script src="/dist/index.js" type="module"></script>
-  <style>
-    /* General body and layout styles */
-    body,
-    html {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      font-family: Arial, sans-serif;
-    }
+  <head>
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8" />
+    <title>Chat!</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-    .container {
-      width: 95%;
-      height: 100%;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-    }
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    .row {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      overflow-y: auto; /* Make the chat area scrollable */
-      padding-bottom: 60px; /* To avoid overlap with input area */
-    }
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-    /* Center the heading */
-    .header {
-      text-align: center;
-      margin-top: 20%;
-      font-size: 24px;
-      font-weight: bold;
-    }
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="styles.css" />
 
-    .message {
-      margin-bottom: 10px;
-    }
-
-    .message .user {
-      font-weight: bold;
-      text-align: right;
-    }
-
-    /* Ensure chat box works well with scrolling */
-    #root {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      overflow-y: auto;
-      width: 100%;
-      padding: 10px;
-    }
-
-    /* Input field styling */
-    .my-input-text {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      width: 100%;
-      font-size: 16px;
-    }
-
-    .my-input-text::placeholder {
-      color: #ccc;
-    }
-
-    /* Button styles */
-    .send-message {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 10px;
-    }
-
-    button {
-      padding: 10px 15px;
-      background: transparent;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-    }
-
-    /* Dark Mode styles */
-    body.dark-mode {
-      background-color: #121212;
-      color: #ffffff;
-    }
-
-    body.dark-mode input {
-      background-color: #333;
-      color: #fff;
-      border: 1px solid #555;
-    }
-
-    /* Dark mode toggle button */
-    .dark-mode-toggle {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    /* Share button */
-    .share-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: transparent;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      z-index: 100;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Media Queries for Responsiveness */
-    @media (max-width: 768px) {
-      .row {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .message {
-        font-size: 14px;
-      }
-
-      .send-message button {
-        width: 100%;
-        padding: 12px;
-      }
-
-      .share-button {
-        bottom: 15px;
-        right: 15px;
-      }
-    }
-
-  </style>
-</head>
-<body>
-  <!-- Dark Mode Toggle Button -->
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()">
-    <img src="https://img.shields.io/badge/Dark-Light-orange" alt="Dark Mode Toggle">
-  </button>
-
-  <div class="container">
-    <div class="header">
-      <h4><b>Buzzer!</b></h4>
-      <p> <img src="https://img.shields.io/badge/Cloudflare-Workers-orange" alt="Badge Preview"></p>
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/ico" href="favicon.ico" />
+    <script src="/dist/index.js" type="module"></script>
+  </head>
+  <body>
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container" style="width: 95%; height: 100%">
+      <div class="row" style="height: 100%">
+        <div class="one-third column" style="margin-top: 25%">
+          <h4><b>Chat</b>, powered by Durable Objects</h4>
+          <p>
+            This chat room is hosted in a single Durable Object, running in one
+            process in one machine in one location, very close to the users.
+          </p>
+        </div>
+        <div class="two-thirds column" id="root"></div>
+      </div>
     </div>
 
-    <div class="row" id="root">
-      <!-- Chat messages will go here -->
-    </div>
-
-    <div class="send-message">
-      <input
-        class="my-input-text"
-        type="text"
-        id="messageInput"
-        placeholder="Type a message..."
-      />
-      <button onclick="sendMessage()">Send</button>
-    </div>
-  </div>
-
-  <!-- Native Share Button -->
-  <button class="share-button" onclick="sharePage()"><img src="https://img.shields.io/badge/bz-zzzrrrr-orange" alt="Badge Preview"></button>
-
-  <script>
-    // Dark Mode Toggle Functionality
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark-mode");
-      const isDarkMode = document.body.classList.contains("dark-mode");
-
-      try {
-        localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
-      } catch (e) {
-        console.warn("LocalStorage not available.");
-      }
-    }
-
-    // On page load, apply the saved dark mode setting
-    function applyDarkModeSetting() {
-      try {
-        if (localStorage.getItem("darkMode") === "enabled") {
-          document.body.classList.add("dark-mode");
-        }
-      } catch (e) {
-        console.warn("LocalStorage not available.");
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", applyDarkModeSetting);
-
-    // Native share functionality
-    function sharePage() {
-      if (navigator.share) {
-        navigator.share({
-          title: document.title,
-          url: window.location.href
-        }).catch(console.error);
-      } else {
-        alert("Your browser does not support native sharing.");
-      }
-    }
-
-    // Send Message Function
-    function sendMessage() {
-      const input = document.getElementById('messageInput');
-      const message = input.value.trim();
-      
-      if (message) {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('message');
-        messageDiv.innerHTML = `<div class="user">You:</div><div>${message}</div>`;
-        document.getElementById('root').appendChild(messageDiv);
-        
-        // Clear the input field
-        input.value = '';
-        
-        // Scroll to the bottom
-        document.getElementById('root').scrollTop = document.getElementById('root').scrollHeight;
-      }
-    }
-  </script>
-</body>
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
 </html>
-
-
-
-

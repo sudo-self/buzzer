@@ -4,7 +4,7 @@
 
 <!-- dash-content-start -->
 
-With this template, you can deploy your own chat app to converse with other users in real-time. Going to the [demo website](https://buzzer.templates.workers.dev) puts you into a unique chat room based on the ID in the url. Share that ID with others to chat with them! This is powered by [Durable Objects](https://developers.cloudflare.com/durable-objects/) and [PartyKit](https://www.partykit.io/).
+With this template, you can deploy your own chat app to converse with other users in real-time. Going to the [demo website](https://durable-chat-template.templates.workers.dev) puts you into a unique chat room based on the ID in the url. Share that ID with others to chat with them! This is powered by [Durable Objects](https://developers.cloudflare.com/durable-objects/) and [PartyKit](https://www.partykit.io/).
 
 ## How It Works
 
@@ -19,10 +19,10 @@ The Durable Object instance that manages the chat room runs in one location, and
 Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
 
 ```
-npm create cloudflare@latest -- --template=cloudflare/templates/buzzer
+npm create cloudflare@latest -- --template=cloudflare/templates/durable-chat-template
 ```
 
-A live public deployment of this template is available at [https://buzzer.templates.workers.dev](https://buzzer.templates.workers.dev)
+A live public deployment of this template is available at [https://durable-chat-template.templates.workers.dev](https://durable-chat-template.templates.workers.dev)
 
 ## Setup Steps
 
