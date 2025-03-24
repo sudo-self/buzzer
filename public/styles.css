@@ -4,22 +4,22 @@ body, html {
   padding: 0;
   display: flex;
   flex-direction: column;
-  background-color: #374851; /* Dark background for contrast */
-  color: #fff; /* White text for better readability */
+  background-color: #374851;
+  color: #fff;
 }
 
 .chat {
   flex: 1;
   padding-top: 30px;
-  padding-bottom: 10px; /* Add space at the bottom for the input */
-  overflow-y: auto; /* Scrollable content */
+  padding-bottom: 10px;
+  overflow-y: auto;
 }
 
 #root {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  overflow-y: auto; /* Allow scroll */
+  overflow-y: auto;
   padding: 10px;
   box-sizing: border-box;
 }
@@ -28,17 +28,27 @@ body, html {
   position: relative;
   margin-bottom: 15px;
   padding: 10px;
-  background-color: #2a3d47; /* Slightly lighter background for each message */
+  background-color: #2a3d47; /* Darker background for each message */
   border-radius: 10px;
   max-width: 80%;
   word-wrap: break-word;
   display: flex;
-  flex-direction: column; /* Ensure user name and message are stacked vertically */
+  flex-direction: column;
+}
+
+.message.user-message {
+  align-self: flex-end; /* Align the user's message to the right */
+  background-color: #4CAF50; /* Light green for user messages */
+}
+
+.message.bot-message {
+  align-self: flex-start; /* Align the bot's message to the left */
+  background-color: #2a3d47; /* Darker background for bot's message */
 }
 
 .message .user {
   font-weight: bold;
-  text-align: right; /* Align user name to the right */
+  text-align: left; /* Align user name to the left */
   font-size: 14px;
   margin-bottom: 5px; /* Small gap before the message */
 }
@@ -114,8 +124,5 @@ body, html {
 
 /* Add visibility of typed text in input */
 .my-input-text:focus, .my-input-text {
-  color: #fff; /* Make sure the text color is white in both normal and focused state */
+  color: #000; /* Make sure the text color is white in both normal and focused state */
 }
-
-
-
