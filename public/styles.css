@@ -38,21 +38,7 @@ body, html {
   line-height: 18px;
 }
 
-.send-message {
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.send-message:hover {
-  background-color: #0056b3;
-}
-
-/* Input Styling */
+/* Fix input text visibility */
 .my-input-text {
   background-color: #fff;
   color: #000;
@@ -77,22 +63,28 @@ body.dark-mode .my-input-text::placeholder {
   color: #aaa;
 }
 
-/* Button Fix for Light Mode */
-body:not(.dark-mode) .send-message {
-  background-color: #007bff;
+/* Fix button visibility in both modes */
+.send-message {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #333;
   color: white;
 }
 
-body:not(.dark-mode) .send-message:hover {
-  background-color: #0056b3;
+.send-message:hover {
+  background-color: #555;
 }
 
 body.dark-mode .send-message {
-  background-color: #444;
+  background-color: #555;
   color: #fff;
 }
 
 body.dark-mode .send-message:hover {
-  background-color: #666;
+  background-color: #777;
 }
+
 
