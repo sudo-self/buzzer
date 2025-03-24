@@ -1,67 +1,57 @@
-<!doctype html>
 <html lang="en">
   <head>
-    
-
-    <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8" />
-    <title>Chat!</title>
+    <title>buzzzrr!</title>
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-    <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/skeleton.css" />
     <link rel="stylesheet" href="styles.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/ico" href="favicon.ico" />
     <script src="/dist/index.js" type="module"></script>
   </head>
   <body>
-    <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="container" style="width: 95%; height: 100%">
       <div class="row" style="height: 100%">
         <div class="one-third column" style="margin-top: 25%">
           <h4><b>Buzzer!</b></h4>
-          <p><img src="https://img.shields.io/badge/powered%20by-Cloudflare%20Workers-orange" alt="Badge Preview"></p>
- <!-- Native Share Button -->           
-<button class="share-button" onclick="sharePage()">
-  <i class="fas fa-share-square"></i>
-</button>
+          <p>
+            <img
+              src="https://img.shields.io/badge/buzzer-chat%20-teal"
+              alt="Badge Preview"
+            />
+          </p>
 
-
+          <button class="share-button" onclick="sharePage()">
+            <i class="fas fa-share-square"></i>
+          </button>
         </div>
         <div class="two-thirds column" id="root"></div>
       </div>
     </div>
-<script>
- // Native share functionality
-    function sharePage() {
-      if (navigator.share) {
-        navigator.share({
-          title: document.title,
-          url: window.location.href
-        }).catch(console.error);
-      } else {
-        alert("Your browser does not support native sharing.");
-      }
-    }
-</script>
 
-    <!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script>
+      // Native share functionality
+      function sharePage() {
+        if (navigator.share) {
+          navigator
+            .share({
+              title: document.title,
+              url: window.location.href,
+            })
+            .catch(console.error);
+        } else {
+          alert("Your browser does not support native sharing.");
+        }
+      }
+    </script>
   </body>
 </html>
