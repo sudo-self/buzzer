@@ -48,7 +48,7 @@ body, html {
 
 .message .user {
   font-weight: bold;
-  text-align: left; /* Align user name to the left */
+  text-align: right; /* Align user name to the left */
   font-size: 14px;
   margin-bottom: 5px; /* Small gap before the message */
 }
