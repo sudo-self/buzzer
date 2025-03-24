@@ -1,4 +1,4 @@
-/* Global Styles */
+
 body, html {
   height: 100%;
   margin: 0;
@@ -10,7 +10,7 @@ body, html {
   font-family: Arial, sans-serif;
 }
 
-/* Chat Container */
+
 .chat {
   flex: 1;
   padding: 20px;
@@ -19,7 +19,7 @@ body, html {
   flex-direction: column;
 }
 
-/* Chat Message Bubble */
+
 .message {
   position: relative;
   margin-bottom: 15px;
@@ -33,7 +33,7 @@ body, html {
   font-size: 16px;
 }
 
-/* User Message (Right Side) */
+
 .message.user-message {
   align-self: flex-end;
   background-color: #3DAE43;
@@ -42,7 +42,7 @@ body, html {
   border-top-right-radius: 2px;
 }
 
-/* Bot Message (Left Side) */
+
 .message.bot-message {
   align-self: flex-start;
   background-color: #1F2D36;
@@ -51,7 +51,7 @@ body, html {
   border-top-left-radius: 2px;
 }
 
-/* User Name (Top Left) */
+
 .message .user {
   font-weight: bold;
   font-size: 14px;
@@ -60,14 +60,14 @@ body, html {
   text-align: left;
 }
 
-/* Message Text (Properly Positioned) */
+
 .message .text {
   text-align: left;
   font-size: 16px;
   line-height: 1.5;
 }
 
-/* Input Field */
+
 .my-input-text {
   width: 100%;
   padding: 12px;
@@ -91,7 +91,7 @@ body, html {
   background-color: #273640;
 }
 
-/* Send Button */
+
 .send-message {
   background-color: #3DAE43;
   color: white;
@@ -124,7 +124,7 @@ body, html {
   box-shadow: none;
 }
 
-/* Share Button */
+
 .share-button {
   background-color: #007bff;
   color: white;
