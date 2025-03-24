@@ -47,5 +47,5 @@ html {
 }
 
 .my-input-text::placeholder {
-  color: #000;
+  color: #ccc;
 }
