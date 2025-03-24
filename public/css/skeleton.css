@@ -289,7 +289,7 @@ input[type="button"] {
   white-space: nowrap;
   background-color: transparent;
   border-radius: 4px;
-  border: 1px solid #bbb;
+  border: 1px solid #FF8D33;
   cursor: pointer;
   box-sizing: border-box;
 }
@@ -304,7 +304,7 @@ input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
   color: #333;
-  border-color: #888;
+  border-color: #FF8D33;
   outline: 0;
 }
 .button.button-primary,
@@ -314,7 +314,7 @@ input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #fff;
   background-color: #33c3f0;
-  border-color: #33c3f0;
+  border-color: #FF8D33;
 }
 .button.button-primary:hover,
 button.button-primary:hover,
@@ -328,7 +328,7 @@ input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #fff;
   background-color: #1eaedb;
-  border-color: #1eaedb;
+  border-color: #FF8D33;
 }
 
 /* Forms
@@ -345,7 +345,7 @@ select {
   height: 38px;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #fff;
-  border: 1px solid #d1d1d1;
+  border: 1px solid #FF8D33;
   border-radius: 4px;
   box-shadow: none;
   box-sizing: border-box;
@@ -377,7 +377,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #33c3f0;
+  border: 1px solid #FF8D33;
   outline: 0;
 }
 label,
@@ -432,7 +432,7 @@ code {
   font-size: 90%;
   white-space: nowrap;
   background: #f1f1f1;
-  border: 1px solid #e1e1e1;
+  border: 1px solid #FF8D33;
   border-radius: 4px;
 }
 pre > code {
