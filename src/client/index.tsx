@@ -104,16 +104,17 @@ function App() {
           content.value = "";
         }}
       >
-        <input
-          type="text"
-          name="content"
-          className="ten columns my-input-text"
-          placeholder={`Hello ${name}...`}
-          autoComplete="off"
-        />
-        <button type="submit" className="send-message two columns">
-          Send
-        </button>
+       <input
+  type="text"
+  name="content"
+  className="ten columns my-input-text"
+  placeholder={`Hello ${name}...`}
+  autoComplete="off"
+/>
+<button type="submit" className="send-message two columns">
+  <i className="fa-regular fa-paper-plane"></i>
+</button>
+
       </form>
     </div>
   );
