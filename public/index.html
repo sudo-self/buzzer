@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <title>Bzzzzzzzz!</title>
-  <meta name="description" content="" />
-  <meta name="author" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/skeleton.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/ico" href="favicon.ico" />
-  <script src="/dist/index.js" type="module" nonce="NTg5NTQ2MTMsMjg1MDc4NjQxMw=="></script>
+  <script src="/dist/index.js" type="module"></script>
   <style>
     body {
       background-color: #fff;
@@ -32,9 +30,6 @@
       border-radius: 5px;
       cursor: pointer;
       font-size: 14px;
-    }
-    .dark-mode-toggle:hover {
-      background: transparent;
     }
     input {
       background-color: #fff;
@@ -60,13 +55,13 @@
 </head>
 <body>
   <button class="dark-mode-toggle" onclick="toggleDarkMode()">
-    <img src="https://img.shields.io/badge/Dark-Light-orange" alt="Badge Preview">
+    <img src="https://img.shields.io/badge/Dark-Light-orange" alt="Toggle Dark Mode">
   </button>
   <div class="container" style="width: 95%; height: 100%">
     <div class="row" style="height: 100%">
       <div class="one-third column" style="margin-top: 25%">
         <h4><b>Buzzer!</b></h4>
-        <p><img src="https://img.shields.io/badge/cloudflare-workers-orange" alt="Badge Preview"></p>
+        <p><img src="https://img.shields.io/badge/cloudflare-workers-orange" alt="Badge"></p>
         <p>
           <button onclick="sharePage()" class="btn">bzzzz</button>
         </p>
@@ -74,94 +69,7 @@
       <div class="two-thirds column" id="root"></div>
     </div>
   </div>
-  <script>
-    function sharePage() {
-      if (navigator.share) {
-        navigator.share({
-          title: document.title,
-          url: window.location.href
-        }).catch(console.error);
-      } else {
-        alert("Your browser does not support native sharing.");
-      }
-    }
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Bzzzzzzzz!</title>
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/skeleton.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/ico" href="favicon.ico" />
-  <script src="/dist/index.js" type="module" nonce="NTg5NTQ2MTMsMjg1MDc4NjQxMw=="></script>
-  <style>
-    body {
-      background-color: #fff;
-      color: #000;
-      transition: background 0.3s, color 0.3s;
-    }
-    body.dark-mode {
-      background-color: #121212;
-      color: #ffffff;
-    }
-    .dark-mode-toggle {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      padding: 10px 15px;
-      background: transparent;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .dark-mode-toggle:hover {
-      background: transparent;
-    }
-    input {
-      background-color: #fff;
-      color: #000;
-      border: 1px solid #ccc;
-      padding: 10px;
-      border-radius: 5px;
-      width: 100%;
-      transition: background 0.3s, color 0.3s;
-    }
-    body.dark-mode input {
-      background-color: #333;
-      color: #fff;
-      border: 1px solid #555;
-    }
-    input::placeholder {
-      color: #888;
-    }
-    body.dark-mode input::placeholder {
-      color: #bbb;
-    }
-  </style>
-</head>
-<body>
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()">
-    <img src="https://img.shields.io/badge/Dark-Light-orange" alt="Badge Preview">
-  </button>
-  <div class="container" style="width: 95%; height: 100%">
-    <div class="row" style="height: 100%">
-      <div class="one-third column" style="margin-top: 25%">
-        <h4><b>Buzzer!</b></h4>
-        <p><img src="https://img.shields.io/badge/cloudflare-workers-orange" alt="Badge Preview"></p>
-        <p>
-          <button onclick="sharePage()" class="btn">bzzzz</button>
-        </p>
-      </div>
-      <div class="two-thirds column" id="root"></div>
-    </div>
-  </div>
+  
   <script>
     function sharePage() {
       if (navigator.share) {
@@ -175,34 +83,35 @@
     }
 
     function toggleDarkMode() {
-    const body = document.body;
-    body.classList.toggle("dark-mode");
-    const isDarkMode = body.classList.contains("dark-mode");
+      const body = document.body;
+      const isDarkMode = body.classList.toggle("dark-mode");
 
-    try {
-      localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
-    } catch (e) {
-      console.warn("LocalStorage not available.");
-    }
-
-    // Force reflow on mobile to ensure proper rendering
-    setTimeout(() => {
-      document.documentElement.style.display = "none";
-      document.documentElement.offsetHeight; 
-      document.documentElement.style.display = "";
-    }, 0);
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    try {
-      if (localStorage.getItem("darkMode") === "enabled") {
-        document.body.classList.add("dark-mode");
+      try {
+        localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
+      } catch (e) {
+        console.warn("LocalStorage not available.");
       }
-    } catch (e) {
-      console.warn("LocalStorage not available.");
+
+      // Fix for mobile rendering issues
+      setTimeout(() => {
+        document.body.style.display = "none";
+        document.body.offsetHeight;
+        document.body.style.display = "";
+      }, 50);
     }
-  });
-  </script> 
+
+    function applyDarkModeSetting() {
+      try {
+        if (localStorage.getItem("darkMode") === "enabled") {
+          document.body.classList.add("dark-mode");
+        }
+      } catch (e) {
+        console.warn("LocalStorage not available.");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", applyDarkModeSetting);
+  </script>
 </body>
 </html>
 
