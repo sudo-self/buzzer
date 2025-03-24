@@ -4,12 +4,12 @@ body, html {
   padding: 0;
   display: flex;
   flex-direction: column;
-  background-color: #374851; /* Dark background for contrast */
-  color: #fff; /* White text for better readability */
+  background-color: #374851;
+  color: #fff;
 }
 
 .chat {
-  padding-top: 30px; /* Space at the top */
+  padding-top: 30px;
 }
 
 #root {
@@ -17,31 +17,30 @@ body, html {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  overflow-y: auto; /* Scrollable content */
+  overflow-y: auto;
   height: 100%;
-  padding: 10px; /* Padding to prevent the text from touching edges */
-  box-sizing: border-box;
+  /* padding: 10px; */
 }
 
 .message {
-  position: relative;
-  margin-bottom: 15px;
-  padding: 10px;
-  background-color: #2a3d47; /* Slightly lighter background for each message */
-  border-radius: 10px;
-  max-width: 80%;
-  word-wrap: break-word;
+  margin-bottom: 10px;
 }
 
 .message .user {
   font-weight: bold;
-  text-align: right; /* Align user name to the right */
+  text-align: right;
+}
+
+
+.message .user {
+  font-weight: bold;
+  text-align: right; 
   font-size: 14px;
-  margin-bottom: 5px; /* Small gap before the message */
+  margin-bottom: 5px; 
 }
 
 .message .text {
-  font-size: 16px; /* Larger font for message text */
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -53,19 +52,19 @@ body, html {
   left: -30px;
   display: none;
   background-color: transparent;
-  color: #e74c3c; /* Red color for delete icon */
+  color: #e74c3c;
   font-size: 16px;
   border: none;
   cursor: pointer;
 }
 
 .message:hover .remove {
-  display: block; /* Show delete button when hovering over message */
+  display: block;
 }
 
 .send-message {
   padding: 10px 20px;
-  background-color: #4CAF50; /* Green background for send button */
+  background-color: #4CAF50;
   border: none;
   border-radius: 5px;
   color: #fff;
