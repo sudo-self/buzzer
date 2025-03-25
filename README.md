@@ -1,3 +1,12 @@
+# chat app CF Workers & Durable Objects
+
+## build
+
+```
+command: esbuild src/client/index.tsx --bundle --splitting --format=esm --platform=browser --outdir=public/dist
+```
+
+
 <img width="989" alt="Screenshot 2025-03-24 at 15 01 37" src="https://github.com/user-attachments/assets/9e24d075-c6c3-424d-86ee-31f89aa4d457" /><hr>
 
 ## names array src/shared.ts
