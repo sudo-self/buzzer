@@ -1,6 +1,4 @@
-# chat app CF Workers & Durable Objects
-
-## build
+# Chat App Workers & Durable Objects
 
 ```
 command: esbuild src/client/index.tsx --bundle --splitting --format=esm --platform=browser --outdir=public/dist
