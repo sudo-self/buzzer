@@ -4,7 +4,6 @@
     <title>buzzzrr!</title>
     <meta name="description" content="" />
     <meta name="author" content="" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="css/normalize.css" />
@@ -23,9 +22,8 @@
       <div class="row" style="height: 100%">
         <div class="one-third column" style="margin-top: 25%">
           <h4><b><img src="https://img.shields.io/badge/Buzzer-Chat-white" alt="Badge Preview"></b></h4>
-      
 
-          <button class="share-button" onclick="sharePage()">
+          <button class="share-button" onclick="buzzAndShare()">
             <i class="fas fa-share-square"></i>
           </button>
         </div>
@@ -34,8 +32,13 @@
     </div>
 
     <script>
-      // Native share functionality
-      function sharePage() {
+      function buzzAndShare() {
+        // Vibrate for 200 milliseconds (0.2s)
+        if ("vibrate" in navigator) {
+          navigator.vibrate(200);
+        }
+
+        // Native share functionality
         if (navigator.share) {
           navigator
             .share({
@@ -50,3 +53,4 @@
     </script>
   </body>
 </html>
+
